@@ -3,26 +3,19 @@
 const SUBSCRIBE_ENDPOINT = "";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const wipModal = document.getElementById("wipModal");
-  if (wipModal && !sessionStorage.getItem("millae_wip_dismissed")) {
-    wipModal.classList.add("open");
-    document.body.style.overflow = "hidden";
+  const wipToast = document.getElementById("wipToast");
+  if (wipToast && !sessionStorage.getItem("millae_wip_dismissed")) {
+    setTimeout(() => wipToast.classList.add("open"), 400);
   }
   const dismissWip = () => {
-    if (!wipModal) return;
-    wipModal.classList.remove("open");
-    document.body.style.overflow = "";
+    if (!wipToast) return;
+    wipToast.classList.remove("open");
     sessionStorage.setItem("millae_wip_dismissed", "1");
   };
   const closeWipBtn = document.getElementById("closeWip");
   const dismissWipBtn = document.getElementById("dismissWip");
   if (closeWipBtn) closeWipBtn.addEventListener("click", dismissWip);
   if (dismissWipBtn) dismissWipBtn.addEventListener("click", dismissWip);
-  if (wipModal) {
-    wipModal.addEventListener("click", (e) => {
-      if (e.target === wipModal) dismissWip();
-    });
-  }
 
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
@@ -60,7 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+    if (e.key === "Escape") {
+      closeModal();
+      dismissWip();
+    }
   });
 
   const form = document.getElementById("subscribeForm");

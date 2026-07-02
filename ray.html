@@ -94,14 +94,11 @@
   </div>
 </footer>
 
-<div class="modal-overlay" id="wipModal">
-  <div class="modal">
-    <button class="modal-close" id="closeWip" aria-label="Close">&times;</button>
-    <span class="eyebrow">Heads Up</span>
-    <h3>This site is a work in progress.</h3>
-    <p>We're still building out millae.ai — some pages and details may change as we go. Thanks for bearing with us.</p>
-    <button class="btn btn-primary" id="dismissWip">Got it</button>
-  </div>
+<div class="toast" id="wipToast" role="status" aria-live="polite">
+  <button class="toast-close" id="closeWip" aria-label="Dismiss">&times;</button>
+  <span class="eyebrow">Heads Up</span>
+  <p>This site is a work in progress — some pages and details may still change. Thanks for bearing with us.</p>
+  <button class="btn btn-outline toast-btn" id="dismissWip">Got it</button>
 </div>
 
 <div class="modal-overlay" id="subscribeModal">
