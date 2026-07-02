@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team — Millae</title>
+<meta name="description" content="Meet the team behind Millae, a Seoul-based AI research team pursuing human-level general intelligence.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-transparent-256.png" alt="Millae logo">
+      Millae
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#mission">Mission</a>
+      <a href="team.html">Team</a>
+      <a href="index.html#hiring">We're Hiring</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-icon btn-outline" href="https://www.linkedin.com/company/millae-ai" target="_blank" rel="noopener" aria-label="Millae on LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+      </a>
+      <button class="btn btn-primary" id="openSubscribe"><span class="full">Subscribe for Updates</span><span class="short-hide">Subscribe</span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding: 80px 0 64px;">
+  <div class="wrap">
+    <span class="eyebrow">The Team</span>
+    <h1 style="font-size: clamp(2rem, 4vw, 3rem);">A small team, on purpose.</h1>
+    <p class="lede">Millae stays deliberately small. Every person here works directly on research — there's no layer between the team and the problem.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="avatar"><img src="assets/ray-sun.jpg" alt="Ray Sun"></div>
+        <h3>Ray Sun</h3>
+        <span class="team-role">Founding Researcher</span>
+        <p>Leading Millae's research program from Seoul, focused on the path to human-level general intelligence.</p>
+        <a href="ray.html" class="link-arrow">View profile →</a>
+      </div>
+      <div class="team-card open-role">
+        <div class="avatar">+</div>
+        <h3>Cofounder Researcher</h3>
+        <span class="team-role">Open Role</span>
+        <p>We're looking for a small number of founding research cofounders to join early. If that's you, we want to hear from you.</p>
+        <a href="index.html#hiring" class="link-arrow">See the role →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow">Join Us</span>
+    <h2>Want to help build this?</h2>
+    <p class="lede">We're looking for founding research cofounders to join the team in Seoul.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="index.html#hiring">See Open Role</a>
+      <a class="btn btn-outline" href="mailto:careers@millae.ai?subject=Founding%20Research%20Cofounder">Email Us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a href="index.html" class="footer-brand">
+        <img src="assets/logo-transparent-256.png" alt="Millae logo">
+        Millae — Seoul, South Korea
+      </a>
+      <div class="footer-actions">
+        <a class="btn btn-icon btn-outline" href="https://www.linkedin.com/company/millae-ai" target="_blank" rel="noopener" aria-label="Millae on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <button class="btn btn-outline" id="openSubscribe3">Subscribe</button>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 Millae. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="wipModal">
+  <div class="modal">
+    <button class="modal-close" id="closeWip" aria-label="Close">&times;</button>
+    <span class="eyebrow">Heads Up</span>
+    <h3>This site is a work in progress.</h3>
+    <p>We're still building out millae.ai — some pages and details may change as we go. Thanks for bearing with us.</p>
+    <button class="btn btn-primary" id="dismissWip">Got it</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="subscribeModal">
+  <div class="modal">
+    <button class="modal-close" id="closeSubscribe" aria-label="Close">&times;</button>
+    <h3>Subscribe for updates</h3>
+    <p>Occasional news from Millae's research team. No spam, unsubscribe anytime.</p>
+    <form class="subscribe-form" id="subscribeForm">
+      <input type="email" name="email" placeholder="you@email.com" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
