@@ -73,7 +73,7 @@
     <p class="lede">We're looking for founding research cofounders to join the team in Seoul.</p>
     <div class="cta-actions">
       <a class="btn btn-primary" href="index.html#hiring">See Open Role</a>
-      <a class="btn btn-outline" href="mailto:careers@millae.ai?subject=Founding%20Research%20Cofounder">Email Us</a>
+      <a class="btn btn-outline" href="mailto:applications@millae.ai?subject=Founding%20Research%20Cofounder">Email Us</a>
     </div>
   </div>
 </section>
@@ -99,7 +99,7 @@
 <div class="toast" id="wipToast" role="status" aria-live="polite">
   <button class="toast-close" id="closeWip" aria-label="Dismiss">&times;</button>
   <span class="eyebrow">Heads Up</span>
-  <p>This site is a work in progress — some pages and details may still change. Thanks for bearing with us.</p>
+  <p>This site is a work in progress — some functionality may not work. Thanks for bearing with us.</p>
   <button class="btn btn-outline toast-btn" id="dismissWip">Got it</button>
 </div>
 
@@ -108,7 +108,9 @@
     <button class="modal-close" id="closeSubscribe" aria-label="Close">&times;</button>
     <h3>Subscribe for updates</h3>
     <p>Occasional news from Millae's research team. No spam, unsubscribe anytime.</p>
-    <form class="subscribe-form" id="subscribeForm">
+    <form class="subscribe-form" id="subscribeForm" name="subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="subscribe">
+      <p hidden><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
       <input type="email" name="email" placeholder="you@email.com" required>
       <button type="submit" class="btn btn-primary">Subscribe</button>
       <div class="form-status" id="formStatus"></div>

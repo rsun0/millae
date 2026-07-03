@@ -33,7 +33,7 @@
       <a href="#hiring">We're Hiring</a>
     </div>
     <div class="nav-actions">
-      <a class="btn btn-icon btn-outline" href="https://www.linkedin.com/company/millae-ai" target="_blank" rel="noopener" aria-label="Millae on LinkedIn">
+      <a class="btn btn-icon btn-outline" href="https://www.linkedin.com/company/millae" target="_blank" rel="noopener" aria-label="Millae on LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
       </a>
       <button class="btn btn-primary" id="openSubscribe"><span class="full">Subscribe for Updates</span><span class="short-hide">Subscribe</span></button>
@@ -166,7 +166,7 @@
       <span class="eyebrow">Founding Research Cofounder</span>
       <h3>Seoul, South Korea · Full-time · Equity</h3>
       <p>If this sounds like you, reach out directly. Tell us about your research and why you want to work on this problem, this way.</p>
-      <a class="btn btn-primary" href="mailto:careers@millae.ai?subject=Founding%20Research%20Cofounder">Get in Touch</a>
+      <a class="btn btn-primary" href="mailto:applications@millae.ai?subject=Founding%20Research%20Cofounder">Get in Touch</a>
     </div>
   </div>
 </section>
@@ -204,7 +204,7 @@
 <div class="toast" id="wipToast" role="status" aria-live="polite">
   <button class="toast-close" id="closeWip" aria-label="Dismiss">&times;</button>
   <span class="eyebrow">Heads Up</span>
-  <p>This site is a work in progress — some pages and details may still change. Thanks for bearing with us.</p>
+  <p>This site is a work in progress — some functionality may not work. Thanks for bearing with us.</p>
   <button class="btn btn-outline toast-btn" id="dismissWip">Got it</button>
 </div>
 
@@ -213,7 +213,9 @@
     <button class="modal-close" id="closeSubscribe" aria-label="Close">&times;</button>
     <h3>Subscribe for updates</h3>
     <p>Occasional news from Millae's research team. No spam, unsubscribe anytime.</p>
-    <form class="subscribe-form" id="subscribeForm">
+    <form class="subscribe-form" id="subscribeForm" name="subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="subscribe">
+      <p hidden><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
       <input type="email" name="email" placeholder="you@email.com" required>
       <button type="submit" class="btn btn-primary">Subscribe</button>
       <div class="form-status" id="formStatus"></div>

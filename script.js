@@ -1,6 +1,13 @@
-// Replace with a real form endpoint (e.g. Formspree, Buttondown, ConvertKit) to make
-// the subscribe form actually collect emails. Until then it only simulates success.
-const SUBSCRIBE_ENDPOINT = "";
+// #subscribeForm is a Netlify Form (see the data-netlify attribute in the HTML).
+// Netlify detects it from the static markup at deploy time and stores submissions
+// server-side — this only works once the site is actually deployed on Netlify.
+const SUBSCRIBE_ENDPOINT = "/";
+
+function encodeFormData(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const wipToast = document.getElementById("wipToast");
@@ -70,20 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
       status.textContent = "Subscribing...";
       status.className = "form-status";
 
-      if (!SUBSCRIBE_ENDPOINT) {
-        setTimeout(() => {
-          status.textContent = "Thanks — we'll be in touch.";
-          status.className = "form-status success";
-          form.reset();
-        }, 400);
-        return;
-      }
-
       try {
         const res = await fetch(SUBSCRIBE_ENDPOINT, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email }),
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encodeFormData({ "form-name": form.getAttribute("name"), email }),
         });
         if (!res.ok) throw new Error("Request failed");
         status.textContent = "Thanks — you're subscribed.";
