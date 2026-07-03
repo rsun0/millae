@@ -10,20 +10,6 @@ function encodeFormData(data) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const wipToast = document.getElementById("wipToast");
-  if (wipToast && !sessionStorage.getItem("millae_wip_dismissed")) {
-    setTimeout(() => wipToast.classList.add("open"), 400);
-  }
-  const dismissWip = () => {
-    if (!wipToast) return;
-    wipToast.classList.remove("open");
-    sessionStorage.setItem("millae_wip_dismissed", "1");
-  };
-  const closeWipBtn = document.getElementById("closeWip");
-  const dismissWipBtn = document.getElementById("dismissWip");
-  if (closeWipBtn) closeWipBtn.addEventListener("click", dismissWip);
-  if (dismissWipBtn) dismissWipBtn.addEventListener("click", dismissWip);
-
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
   if (navToggle && navLinks) {
@@ -60,10 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeModal();
-      dismissWip();
-    }
+    if (e.key === "Escape") closeModal();
   });
 
   const form = document.getElementById("subscribeForm");
