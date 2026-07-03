@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const openTriggers = [
     document.getElementById("openSubscribe"),
     document.getElementById("openSubscribe2"),
-    document.getElementById("openSubscribe3"),
   ].filter(Boolean);
   const closeBtn = document.getElementById("closeSubscribe");
 
