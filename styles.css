@@ -527,6 +527,10 @@ p {
   margin-bottom: 8px;
 }
 
+.profile-meta .team-role + .team-role {
+  margin-top: -4px;
+}
+
 .profile-actions {
   display: flex;
   gap: 12px;
