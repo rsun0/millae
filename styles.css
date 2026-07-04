@@ -471,6 +471,25 @@ p {
   color: var(--text);
 }
 
+/* ---------- Talk ---------- */
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  margin-top: 24px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 /* ---------- Hiring ---------- */
 .hiring {
   background: var(--bg-elevated);
