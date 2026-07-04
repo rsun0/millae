@@ -472,6 +472,10 @@ p {
 }
 
 /* ---------- Talk ---------- */
+#talks-publications {
+  padding-top: 16px;
+}
+
 .video-embed {
   position: relative;
   width: 100%;
@@ -547,7 +551,7 @@ p {
 /* ---------- Profile (Ray Sun page) ---------- */
 .profile-hero {
   padding-top: 72px;
-  padding-bottom: 64px;
+  padding-bottom: 32px;
 }
 
 .profile-top {
@@ -616,6 +620,10 @@ p {
   gap: 16px;
 }
 
+.profile-body p:last-of-type {
+  margin-bottom: 0;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -633,7 +641,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 .focus-tags span {
