@@ -296,7 +296,8 @@ p {
 
 .lede a,
 .point p a,
-.callout p a {
+.callout p a,
+.paper-card h3 a {
   color: var(--accent-light);
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -304,7 +305,8 @@ p {
 
 .lede a:hover,
 .point p a:hover,
-.callout p a:hover {
+.callout p a:hover,
+.paper-card h3 a:hover {
   color: var(--text);
 }
 
@@ -422,6 +424,51 @@ p {
   background: transparent;
   border: 1px dashed var(--border-strong);
   color: var(--text-dim);
+}
+
+/* ---------- Publications ---------- */
+.papers-list {
+  display: grid;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.paper-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.paper-card .eyebrow {
+  display: block;
+  width: fit-content;
+}
+
+.paper-area {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-light);
+  margin-bottom: 10px;
+}
+
+.paper-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.paper-authors {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+}
+
+.paper-card .link-arrow {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
 /* ---------- Hiring ---------- */
