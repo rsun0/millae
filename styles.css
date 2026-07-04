@@ -294,6 +294,10 @@ p {
   font-size: 0.95rem;
 }
 
+.point p + p {
+  margin-top: 12px;
+}
+
 .lede a,
 .point p a,
 .callout p a,
