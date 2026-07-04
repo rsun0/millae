@@ -752,13 +752,21 @@ footer {
     display: block;
   }
 
-  .nav-actions .btn-primary span.full,
-  .nav-actions .btn-outline span.full {
+  .nav-actions .btn-primary span.full {
     display: none;
   }
 
   .nav-actions .short-hide {
     display: inline;
+  }
+
+  .nav-actions .btn {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .nav-linkedin {
+    display: none;
   }
 }
 
