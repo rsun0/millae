@@ -10,18 +10,6 @@ function encodeFormData(data) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sslToast = document.getElementById("sslToast");
-  if (sslToast && !localStorage.getItem("millae_ssl_toast_shown")) {
-    const dismissSslToast = () => sslToast.classList.remove("open");
-    setTimeout(() => {
-      sslToast.classList.add("open");
-      localStorage.setItem("millae_ssl_toast_shown", "1");
-    }, 300);
-    setTimeout(dismissSslToast, 10300);
-    const closeSslToastBtn = document.getElementById("closeSslToast");
-    if (closeSslToastBtn) closeSslToastBtn.addEventListener("click", dismissSslToast);
-  }
-
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
   if (navToggle && navLinks) {
