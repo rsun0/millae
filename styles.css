@@ -298,6 +298,17 @@ p {
   margin-top: 12px;
 }
 
+.point ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.point ul li {
+  margin-top: 6px;
+}
+
 .lede a,
 .point p a,
 .callout p a,
