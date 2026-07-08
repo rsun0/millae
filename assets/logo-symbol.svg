@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 104" fill="none">
+  <defs>
+    <linearGradient id="millaeSun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6938"/>
+      <stop offset="1" stop-color="#ff9f75"/>
+    </linearGradient>
+    <style>
+      .lg-turtle { animation: lg-crawl 6s ease-in-out infinite; }
+      @keyframes lg-crawl {
+        0%, 100% { transform: translate(0, 0); }
+        50%      { transform: translate(3px, -1.4px); }
+      }
+      @media (prefers-reduced-motion: reduce) { .lg-turtle { animation: none; } }
+    </style>
+  </defs>
+  <!-- sun -->
+  <path d="M58 92 A64 64 0 0 1 186 92 Z" fill="url(#millaeSun)"/>
+  <!-- turtle head, front-left (slowly crawls) -->
+  <g class="lg-turtle">
+    <path d="M10 92 A32 32 0 0 1 74 92 Z" fill="#316c45"/>
+    <ellipse cx="30" cy="77" rx="3.4" ry="4.4" fill="#eaf3ec"/>
+  </g>
+  <!-- horizon baseline -->
+  <line x1="6" y1="92" x2="194" y2="92" stroke="#fff2b0" stroke-width="5" stroke-linecap="round"/>
+</svg>

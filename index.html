@@ -24,8 +24,8 @@
 <nav class="nav">
   <div class="wrap">
     <a href="index.html" class="brand">
-      <img src="assets/logo-transparent-256.png" alt="Millae logo">
-      Millae
+      <img src="assets/logo-symbol.svg" alt="" class="brand-symbol">
+      <img src="assets/logo-wordmark.png" alt="Millae" class="brand-wordmark">
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#mission">Mission</a>
@@ -40,9 +40,60 @@
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <img src="assets/logo-transparent-256.png" alt="Millae" class="hero-logo">
+<header class="hero hero-sunrise">
+  <!-- Sunrise sky: bright orange morning background, soft glow + elegant
+       concentric light arcs radiating from the horizon. Decorative. -->
+  <div class="hero-sky" aria-hidden="true">
+    <div class="sun-glow"></div>
+    <!-- Flowing diagonal lines, ifp.org-style: a field of fine curves sweeping
+         across the sky, thickest where they converge near the horizon. -->
+    <svg class="hero-flowlines" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#fff">
+        <path class="flow" d="M-100 40 C 220 140, 520 40, 1100 260" stroke-width="1" stroke-opacity="0.16"/>
+        <path class="flow" d="M-100 90 C 240 190, 540 90, 1100 300" stroke-width="1.1" stroke-opacity="0.14"/>
+        <path class="flow" d="M-100 150 C 260 230, 560 150, 1100 340" stroke-width="1.2" stroke-opacity="0.15"/>
+        <path class="flow" d="M-100 210 C 280 270, 580 210, 1100 380" stroke-width="1.3" stroke-opacity="0.13"/>
+        <path class="flow" d="M-100 270 C 300 310, 600 270, 1100 420" stroke-width="1.4" stroke-opacity="0.12"/>
+        <path class="flow" d="M-100 330 C 320 350, 620 330, 1100 460" stroke-width="1.5" stroke-opacity="0.11"/>
+        <path class="flow" d="M-100 390 C 340 390, 640 390, 1100 500" stroke-width="1.6" stroke-opacity="0.1"/>
+      </g>
+    </svg>
+    <svg class="sun-arcs" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#fff" stroke-width="1.4">
+        <path class="arc" d="M110 560 A390 390 0 0 1 890 560"/>
+        <path class="arc" d="M40 560 A460 460 0 0 1 960 560"/>
+        <path class="arc" d="M-40 560 A540 540 0 0 1 1040 560"/>
+        <path class="arc" d="M-130 560 A630 630 0 0 1 1130 560"/>
+        <path class="arc" d="M-230 560 A730 730 0 0 1 1230 560"/>
+        <path class="arc" d="M-340 560 A840 840 0 0 1 1340 560"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <!-- Hero logo: "millae" set inside the sun, with a slowly crawling turtle.
+         Inline SVG so the turtle can animate and the mark stays crisp. -->
+    <div class="hero-logo">
+      <svg class="hero-logo-svg" viewBox="0 0 250 104" fill="none" role="img" aria-label="Millae">
+        <defs>
+          <linearGradient id="heroSun" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ff6938"/>
+            <stop offset="1" stop-color="#ff9f75"/>
+          </linearGradient>
+        </defs>
+        <!-- sun -->
+        <path d="M70 92 A88 86 0 0 1 246 92 Z" fill="url(#heroSun)"/>
+        <!-- millae wordmark, in white, sitting inside the sun -->
+        <image href="assets/logo-wordmark.png" x="100" y="30" width="116" height="61" preserveAspectRatio="xMidYMax meet"/>
+        <!-- turtle, front-left, slowly crawling -->
+        <g class="hero-turtle">
+          <path d="M14 92 A34 30 0 0 1 82 92 Z" fill="#316c45"/>
+          <ellipse cx="36" cy="78" rx="3.6" ry="4.6" fill="#eaf3ec"/>
+        </g>
+        <!-- horizon baseline -->
+        <line x1="8" y1="92" x2="244" y2="92" stroke="#fff2b0" stroke-width="4.5" stroke-linecap="round"/>
+      </svg>
+    </div>
     <h1>Human-level general intelligence.<br>Nothing else.</h1>
     <p class="lede">Millae is an independent research team in Seoul, South Korea. We are working towards general intelligence.</p>
     <div class="hero-actions">
@@ -51,6 +102,9 @@
     </div>
   </div>
 </header>
+
+<!-- Full-width horizon line: the stark seam where the orange sunrise breaks into black. -->
+<div class="horizon" aria-hidden="true"></div>
 
 <section id="mission">
   <div class="wrap mission-grid">
@@ -200,8 +254,9 @@
   <div class="wrap">
     <div class="footer-grid">
       <a href="index.html" class="footer-brand">
-        <img src="assets/logo-transparent-256.png" alt="Millae logo">
-        Millae — Seoul, South Korea
+        <img src="assets/logo-symbol.svg" alt="" class="footer-symbol">
+        <img src="assets/logo-wordmark.png" alt="Millae" class="footer-wordmark">
+        <span>— Seoul, South Korea</span>
       </a>
     </div>
     <p class="footer-note">© 2026 Millae. All rights reserved.</p>
