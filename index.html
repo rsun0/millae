@@ -24,8 +24,8 @@
 <nav class="nav">
   <div class="wrap">
     <a href="index.html" class="brand">
-      <img src="assets/logo-transparent-256.png" alt="Millae logo">
-      Millae
+      <img src="assets/logo-symbol.svg" alt="" class="brand-symbol">
+      <img src="assets/logo-wordmark.png" alt="Millae" class="brand-wordmark">
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#mission">Mission</a>
@@ -40,9 +40,37 @@
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <img src="assets/logo-transparent-256.png" alt="Millae" class="hero-logo">
+<header class="hero hero-sunrise">
+  <!-- Sunrise sky: bright orange morning background, soft glow + elegant
+       concentric light arcs radiating from the horizon. Decorative. -->
+  <div class="hero-sky" aria-hidden="true">
+    <div class="sun-glow"></div>
+    <!-- Flowing diagonal lines, ifp.org-style: a field of fine curves sweeping
+         across the sky, thickest where they converge near the horizon. -->
+    <svg class="hero-flowlines" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#fff">
+        <path class="flow" d="M-100 40 C 220 140, 520 40, 1100 260" stroke-width="1" stroke-opacity="0.24"/>
+        <path class="flow" d="M-100 90 C 240 190, 540 90, 1100 300" stroke-width="1.1" stroke-opacity="0.21"/>
+        <path class="flow" d="M-100 150 C 260 230, 560 150, 1100 340" stroke-width="1.2" stroke-opacity="0.22"/>
+        <path class="flow" d="M-100 210 C 280 270, 580 210, 1100 380" stroke-width="1.3" stroke-opacity="0.19"/>
+        <path class="flow" d="M-100 270 C 300 310, 600 270, 1100 420" stroke-width="1.4" stroke-opacity="0.17"/>
+        <path class="flow" d="M-100 330 C 320 350, 620 330, 1100 460" stroke-width="1.5" stroke-opacity="0.15"/>
+        <path class="flow" d="M-100 390 C 340 390, 640 390, 1100 500" stroke-width="1.6" stroke-opacity="0.13"/>
+      </g>
+    </svg>
+    <svg class="sun-arcs" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#fff" stroke-width="1.4">
+        <path class="arc" d="M110 560 A390 390 0 0 1 890 560"/>
+        <path class="arc" d="M40 560 A460 460 0 0 1 960 560"/>
+        <path class="arc" d="M-40 560 A540 540 0 0 1 1040 560"/>
+        <path class="arc" d="M-130 560 A630 630 0 0 1 1130 560"/>
+        <path class="arc" d="M-230 560 A730 730 0 0 1 1230 560"/>
+        <path class="arc" d="M-340 560 A840 840 0 0 1 1340 560"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
     <h1>Human-level general intelligence.<br>Nothing else.</h1>
     <p class="lede">Millae is an independent research team in Seoul, South Korea. We are working towards general intelligence.</p>
     <div class="hero-actions">
@@ -50,11 +78,37 @@
       <a href="team.html" class="btn btn-outline">Meet the Team</a>
     </div>
   </div>
+
+  <!-- The logo IS the horizon: sun + turtle + "millae" rise above a full-width
+       cream line that forms the seam where the sunrise breaks into black.
+       The logo's own baseline is dropped in favour of the full-width line. -->
+  <div class="hero-horizon">
+    <div class="hero-logo">
+      <svg class="hero-logo-svg" viewBox="0 0 250 92" fill="none" role="img" aria-label="Millae">
+        <defs>
+          <linearGradient id="heroSun" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ff6938"/>
+            <stop offset="1" stop-color="#ff9f75"/>
+          </linearGradient>
+        </defs>
+        <!-- sun -->
+        <path d="M70 92 A88 86 0 0 1 246 92 Z" fill="url(#heroSun)"/>
+        <!-- millae wordmark, in white, sitting inside the sun -->
+        <image href="assets/logo-wordmark.png" x="88" y="20" width="140" height="72" preserveAspectRatio="xMidYMax meet"/>
+        <!-- turtle, front-left, slowly crawling -->
+        <g class="hero-turtle">
+          <path d="M14 92 A34 30 0 0 1 82 92 Z" fill="#316c45"/>
+          <ellipse cx="36" cy="78" rx="3.6" ry="4.6" fill="#eaf3ec"/>
+        </g>
+      </svg>
+    </div>
+  </div>
 </header>
 
 <section id="mission">
   <div class="wrap mission-grid">
     <div>
+      <div class="eyebrow-rule"></div>
       <span class="eyebrow">Our Focus</span>
       <h2>Pure research.</h2>
       <p class="lede">Most companies split their attention between research and product, or crowd into the same handful of trendy approaches. Some academic labs do the same. We do neither. Millae is a research effort focused purely on fundamental questions — deliberately working the under-invested, unfashionable corners of AI research, where we believe the highest-leverage progress is still waiting to be found.</p>
@@ -95,6 +149,7 @@
 <section id="philsophy">
   <div class="wrap mission-grid">
     <div>
+      <div class="eyebrow-rule"></div>
       <span class="eyebrow">How We Work</span>
       <h2>We don't rush.</h2>
       <p class="lede">Good research takes time, and we're not interested in a publication treadmill to prove otherwise. We work at the pace the problem actually requires, and we'd rather walk in the right direction than risk sprinting in the wrong direction.</p>
@@ -109,7 +164,7 @@
         <span class="num">02</span>
         <h3>Committed to the open-source community</h3>
         <p>We believe the field goes further in the long run through open collaboration, rather than siloed proprietary efforts. We see ourselves as just one team contributing to the broader collective effort to reach general intelligence. If your lab is interested in collaborating with us, <a href="mailto:collaboration@millae.ai">please email us</a>.</p>
-        <p>"If you want to go fast, go alone. If you want to go far, go together."</p>
+        <p class="pull-quote">"If you want to go fast, go alone. If you want to go far, go together."</p>
       </div>
     </div>
   </div>
@@ -119,6 +174,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
+        <div class="eyebrow-rule"></div>
         <span class="eyebrow">The Team</span>
         <h2>Meet the people behind Millae.</h2>
       </div>
@@ -130,6 +186,7 @@
 <section id="hiring" class="hiring">
   <div class="wrap hiring-grid">
     <div>
+      <div class="eyebrow-rule"></div>
       <span class="eyebrow">We're Hiring</span>
       <h2>Join as a founding researcher.</h2>
       <p class="lede">We're looking for:</p>
@@ -150,6 +207,7 @@
 
 <section class="cta">
   <div class="wrap">
+    <div class="eyebrow-rule" style="margin-left:auto;margin-right:auto;"></div>
     <span class="eyebrow">Stay Connected</span>
     <h2>Follow our research as it happens.</h2>
     <p class="lede">We share updates on our research rarely — only when it matters.</p>
@@ -164,8 +222,9 @@
   <div class="wrap">
     <div class="footer-grid">
       <a href="index.html" class="footer-brand">
-        <img src="assets/logo-transparent-256.png" alt="Millae logo">
-        Millae — Seoul, South Korea
+        <img src="assets/logo-symbol.svg" alt="" class="footer-symbol">
+        <img src="assets/logo-wordmark.png" alt="Millae" class="footer-wordmark">
+        <span>— Seoul, South Korea</span>
       </a>
     </div>
     <p class="footer-note">© 2026 Millae. All rights reserved.</p>
