@@ -712,8 +712,7 @@ p {
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
-/* Thin top accent bar, alternating orange / green across the grid — a small
-   rhythm that echoes the logo's sun-and-turtle pairing across every card. */
+/* Thin top accent bar, consistent across every card. */
 .team-card::before {
   content: "";
   position: absolute;
@@ -722,14 +721,6 @@ p {
   right: 0;
   height: 3px;
   background: var(--accent);
-}
-
-.team-card:nth-child(3n+2)::before {
-  background: var(--green);
-}
-
-.team-card:nth-child(3n)::before {
-  background: linear-gradient(90deg, var(--accent), var(--green));
 }
 
 .team-card.open-role::before {
