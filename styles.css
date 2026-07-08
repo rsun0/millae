@@ -251,8 +251,6 @@ p {
 /* Bright orange morning sky. This is the "starting page" — one strong color,
    then a stark break to black at the horizon line below. */
 :root {
-  --sky-dark: #0c0602;
-  --sky-rust: #5a250f;
   --sky-top: #ff8a2b;
   --sky-mid: #ff9d3d;
   --sky-low: #ffbf66;
@@ -267,17 +265,9 @@ p {
   align-items: center;
   padding: 132px 0 96px;
   color: var(--sky-ink);
-  /* Dune-poster treatment: near-black at the top, warming through rust into
-     a vivid orange glow where the sun sits, settling into pale gold at the
-     horizon. Black bleeds back in below via the .horizon seam. */
-  background: linear-gradient(
-    180deg,
-    var(--sky-dark) 0%,
-    var(--sky-rust) 24%,
-    var(--sky-top) 46%,
-    var(--sky-mid) 66%,
-    var(--sky-low) 100%
-  );
+  /* Pure sunrise treatment: bright orange top to bottom, no black creeping
+     in from the top. The break to black happens all at once at .horizon. */
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 46%, var(--sky-low) 100%);
   border-bottom: none;
 }
 
@@ -421,16 +411,13 @@ p {
 }
 
 /* ---------- Horizon: the stark orange → black seam ---------- */
+/* A genuine edge-to-edge solid line — no fade at the ends — so the break
+   between the sunrise page and the black page below reads as one continuous
+   seam across the full width, not just a glow in the center. */
 .horizon {
   height: 2px;
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--horizon-line) 12%,
-    var(--horizon-line) 88%,
-    transparent
-  );
+  background: var(--horizon-line);
   box-shadow: 0 0 22px 2px rgba(255, 190, 110, 0.5);
 }
 
