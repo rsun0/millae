@@ -262,22 +262,16 @@ p {
 }
 
 .hero-sunrise {
-  min-height: min(92vh, 820px);
+  min-height: min(94vh, 880px);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 132px 0 96px;
+  padding: 120px 0 0;          /* no bottom padding — the logo reaches the seam */
   color: var(--sky-ink);
-  /* Dune-poster treatment: near-black at the top, warming through rust into
-     a vivid orange glow where the sun sits, settling into pale gold at the
-     horizon. Black bleeds back in below via the .horizon seam. */
-  background: linear-gradient(
-    180deg,
-    var(--sky-dark) 0%,
-    var(--sky-rust) 24%,
-    var(--sky-top) 46%,
-    var(--sky-mid) 66%,
-    var(--sky-low) 100%
-  );
+  /* Bright sunrise sky, top to bottom, so the dark headline stays readable
+     everywhere. The stark break to black happens all at once at the logo's
+     cream horizon line. */
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 50%, var(--sky-low) 100%);
   border-bottom: none;
 }
 
@@ -357,15 +351,42 @@ p {
 .hero-inner {
   position: relative;
   z-index: 1;
+  flex: 1;                 /* take the space above the horizon */
   display: flex;
   flex-direction: column;
+  justify-content: center; /* centre the copy in that space */
   align-items: center;
 }
 
+/* The horizon row: a full-width cream line at the very bottom of the hero,
+   with the logo sitting on it so the sun/turtle rise out of the seam. */
+.hero-horizon {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 48px;
+}
+
+.hero-horizon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--horizon-line);
+  box-shadow: 0 0 26px 3px rgba(255, 190, 110, 0.55);
+}
+
 .hero-logo {
-  width: clamp(230px, 30vw, 320px);
-  margin-bottom: 34px;
-  filter: drop-shadow(0 12px 30px rgba(120, 45, 0, 0.28));
+  position: relative;
+  z-index: 1;
+  width: clamp(250px, 34vw, 380px);
+  margin-bottom: -1px;      /* seat the sun/turtle exactly on the line */
+  filter: drop-shadow(0 -6px 26px rgba(120, 45, 0, 0.22));
 }
 
 .hero-logo-svg {
@@ -458,13 +479,7 @@ p {
   .hero-sunrise .lede { animation-delay: 0.3s; }
   .hero-sunrise .hero-actions { animation-delay: 0.42s; }
 
-  /* the whole mark gently floats */
-  .hero-logo-svg {
-    animation: sun-float 6.5s ease-in-out infinite;
-    will-change: transform;
-  }
-
-  /* the turtle slowly crawls */
+  /* the turtle slowly crawls along the horizon */
   .hero-turtle {
     animation: turtle-crawl 6s ease-in-out infinite;
   }
