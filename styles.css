@@ -325,7 +325,9 @@ p {
 .hero-flowlines .flow:nth-child(6) { animation-delay: -15s; }
 .hero-flowlines .flow:nth-child(7) { animation-delay: -18s; }
 
-/* Concentric light arcs radiating from the horizon sun (ifp-style line-work). */
+/* Concentric light arcs radiating from the horizon sun (ifp-style line-work).
+   The whole group slowly breathes outward, so the lines feel like light
+   pulsing up from the horizon; each arc also shimmers in opacity. */
 .sun-arcs {
   position: absolute;
   left: 50%;
@@ -334,6 +336,8 @@ p {
   max-width: 1900px;
   height: 92%;
   transform: translateX(-50%);
+  transform-origin: 50% 100%;
+  animation: arc-radiate 14s ease-in-out infinite;
 }
 
 .sun-arcs .arc {
@@ -509,7 +513,7 @@ p {
 
 @keyframes turtle-crawl {
   0%, 100% { transform: translateX(0); }
-  50%      { transform: translateX(4px); }
+  50%      { transform: translateX(8px); }
 }
 
 @keyframes arc-shimmer {
@@ -522,8 +526,14 @@ p {
   50%      { transform: translate(14px, -6px); }
 }
 
+@keyframes arc-radiate {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50%      { transform: translateX(-50%) scale(1.05); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sun-glow,
+  .sun-arcs,
   .sun-arcs .arc,
   .hero-flowlines .flow,
   .hero-logo-svg,
