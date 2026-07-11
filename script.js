@@ -45,6 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Condense the sticky nav once the page is scrolled past the top.
+  const nav = document.querySelector(".nav");
+  if (nav) {
+    const onNavScroll = () => nav.classList.toggle("scrolled", window.scrollY > 24);
+    onNavScroll();
+    window.addEventListener("scroll", onNavScroll, { passive: true });
+  }
+
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
   if (navToggle && navLinks) {

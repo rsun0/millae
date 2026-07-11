@@ -109,6 +109,22 @@ p {
   backdrop-filter: blur(14px);
   background: rgba(5, 5, 7, 0.7);
   border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Condensed state once scrolled (class toggled in script.js). */
+.nav.scrolled {
+  background: rgba(5, 5, 7, 0.92);
+  border-bottom-color: var(--border-strong);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.nav .wrap {
+  transition: height 0.3s ease;
+}
+
+@media (min-width: 861px) {
+  .nav.scrolled .wrap { height: 60px; }
 }
 
 .nav .wrap {
@@ -150,6 +166,32 @@ p {
 
 .nav-links a:not(.btn):hover {
   color: var(--text);
+}
+
+/* Sliding underline on hover. */
+.nav-links a:not(.btn) {
+  position: relative;
+}
+
+.nav-links a:not(.btn)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 1.5px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.nav-links a:not(.btn):hover::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a:not(.btn)::after { transition: none; }
 }
 
 .nav-actions {
@@ -911,10 +953,39 @@ p {
   width: 18px;
   height: 18px;
   border-radius: 100px;
-  background: rgba(255, 122, 26, 0.15)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 L5 8.7 L9.4 3.5' fill='none' stroke='%23ff7a1a' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
-    center / 11px 11px no-repeat;
+  background: rgba(255, 122, 26, 0.15);
   border: 1px solid rgba(255, 122, 26, 0.45);
+}
+
+/* Inline check, centered in the circle; draws in when the section reveals. */
+.req-check {
+  position: absolute;
+  left: 3.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 11px;
+  height: 11px;
+  overflow: visible;
+}
+
+.req-check path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dashoffset: 0;            /* fully drawn by default (no-JS / reduced motion) */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .req-check path {
+    stroke-dasharray: 12;
+    stroke-dashoffset: 12;         /* hidden until the hiring block scrolls in */
+    transition: stroke-dashoffset 0.55s ease;
+  }
+  .hiring-grid > div.in .req-check path { stroke-dashoffset: 0; }
+  .req-list li:nth-child(2) .req-check path { transition-delay: 0.12s; }
+  .req-list li:nth-child(3) .req-check path { transition-delay: 0.24s; }
 }
 
 .hiring-card {
