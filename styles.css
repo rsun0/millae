@@ -906,7 +906,8 @@ p {
   content: "";
   position: absolute;
   left: 0;
-  top: calc((1.6em - 18px) / 2);   /* center the check on the first text line */
+  top: 50%;
+  transform: translateY(-50%);     /* center on the whole item (between lines) */
   width: 18px;
   height: 18px;
   border-radius: 100px;
