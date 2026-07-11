@@ -47,10 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Condense the sticky nav once the page is scrolled past the top.
   const nav = document.querySelector(".nav");
-  if (nav) {
-    const onNavScroll = () => nav.classList.toggle("scrolled", window.scrollY > 24);
-    onNavScroll();
-    window.addEventListener("scroll", onNavScroll, { passive: true });
+  const dayProgress = document.querySelector(".day-progress");
+  if (nav || dayProgress) {
+    const onScrollUpdate = () => {
+      if (nav) nav.classList.toggle("scrolled", window.scrollY > 24);
+      if (dayProgress) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+        dayProgress.style.width = (pct * 100).toFixed(2) + "%";
+      }
+    };
+    onScrollUpdate();
+    window.addEventListener("scroll", onScrollUpdate, { passive: true });
+    window.addEventListener("resize", onScrollUpdate, { passive: true });
   }
 
   const navToggle = document.getElementById("navToggle");

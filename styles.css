@@ -1435,3 +1435,64 @@ footer {
   height: auto;
   filter: drop-shadow(0 -6px 30px rgba(200, 80, 30, 0.4));
 }
+
+/* Time-of-day dividers: a sun cresting the horizon, higher toward mid-page */
+.hz-divider.hz-sun { overflow: visible; }
+.hz-crest {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 88px;
+  height: var(--h, 18px);
+  overflow: hidden;
+  pointer-events: none;
+}
+.hz-crest::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff6938, #ff9f75);
+}
+/* soft glow behind the cresting sun (unclipped, so no box edge) */
+.hz-divider.hz-sun::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 70px;
+  background: radial-gradient(ellipse at center bottom, rgba(255, 120, 50, 0.22), transparent 70%);
+  pointer-events: none;
+}
+/* on the midday divider the turtle sits just left of the high sun */
+.hz-divider.has-turtle .hz-turtle { left: calc(50% - 66px); }
+
+/* Scroll-linked "sun across the sky" progress on the nav's lower edge */
+.day-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 0;
+  max-width: 100%;
+  background: linear-gradient(90deg, #ff8a2b, #ff6938);
+  z-index: 46;
+  pointer-events: none;
+}
+.day-progress-sun {
+  position: absolute;
+  right: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffce8a;
+  box-shadow: 0 0 8px 2px rgba(255, 180, 90, 0.85);
+}
