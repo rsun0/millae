@@ -131,13 +131,8 @@ p {
   gap: 9px;
 }
 
-.brand-symbol {
-  height: 19px;
-  width: auto;
-}
-
-.brand-wordmark {
-  height: 34px;
+.brand-logo {
+  height: 32px;
   width: auto;
 }
 
@@ -368,11 +363,10 @@ p {
   filter: drop-shadow(0 12px 30px rgba(120, 45, 0, 0.28));
 }
 
-.hero-logo-svg {
+.hero-logo-img {
   width: 100%;
   height: auto;
   display: block;
-  overflow: visible;
 }
 
 .hero-turtle {
@@ -1094,13 +1088,8 @@ footer {
   font-size: 0.9rem;
 }
 
-.footer-symbol {
-  height: 20px;
-  width: auto;
-}
-
-.footer-wordmark {
-  height: 24px;
+.footer-logo {
+  height: 28px;
   width: auto;
   opacity: 0.9;
 }
