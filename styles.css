@@ -1339,3 +1339,99 @@ footer {
     text-align: center;
   }
 }
+
+/* ============ Brand motifs — logo woven through the page ============ */
+
+/* 2. Giant faint sun bleeding from a section edge (brand texture) */
+.sun-watermark {
+  position: absolute;
+  z-index: 0;
+  width: 720px;
+  max-width: 92vw;
+  aspect-ratio: 2 / 1;
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(180deg, rgba(255, 105, 56, 0.07), rgba(255, 159, 117, 0.015) 70%, transparent);
+  pointer-events: none;
+}
+#mission .sun-watermark { right: -150px; bottom: -100px; }
+#hiring .sun-watermark  { left: -170px;  bottom: -120px; }
+
+/* 3. Horizon dividers between sections (logo's cream baseline as rhythm) */
+.hz-divider {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 208, 137, 0.38) 14%, rgba(255, 208, 137, 0.38) 86%, transparent);
+}
+.hz-divider.has-turtle { overflow: visible; }
+.hz-turtle {
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width: 34px;
+  height: auto;
+  filter: drop-shadow(0 -2px 6px rgba(0, 0, 0, 0.35));
+}
+/* dividers replace the faint section borders here */
+#mission, #philsophy, #team-preview { border-bottom: none; }
+
+/* 4. Mini sun marker on the point numbers (01 / 02) */
+.point .num {
+  position: relative;
+  padding-top: 15px;
+}
+.point .num::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 22px;
+  height: 11px;
+  border-radius: 11px 11px 0 0;
+  background: linear-gradient(180deg, #ff6938, #ff9f75);
+}
+
+/* 1. Sunset bookend on the closing CTA */
+.cta {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 200px;      /* room for the setting sun below the buttons */
+  background: linear-gradient(180deg, var(--bg) 0%, #140a05 62%, #24120a 100%);
+}
+.cta-sky {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.cta-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -46%;
+  width: 120vw;
+  max-width: 1200px;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 150, 80, 0.2), rgba(255, 120, 50, 0.06) 38%, transparent 62%);
+}
+.cta-arcs {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 150vw;
+  max-width: 1700px;
+  height: 74%;
+  transform: translateX(-50%);
+}
+.cta-sun {
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width: min(440px, 66vw);
+  height: auto;
+  filter: drop-shadow(0 -6px 30px rgba(200, 80, 30, 0.4));
+}
