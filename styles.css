@@ -564,7 +564,7 @@ p {
   width: 40px;
   height: 3px;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--green));
+  background: linear-gradient(90deg, var(--accent), #ffffff);
   margin-bottom: 18px;
 }
 
@@ -638,7 +638,7 @@ p {
 .pull-quote {
   margin: 16px 0 0;
   padding-left: 18px;
-  border-left: 3px solid var(--green);
+  border-left: 3px solid var(--accent);
   font-size: 1.05rem;
   font-style: italic;
   color: var(--text);
@@ -916,20 +916,10 @@ p {
   width: 18px;
   height: 18px;
   border-radius: 100px;
-  background: rgba(79, 157, 107, 0.15);
-  border: 1px solid rgba(79, 157, 107, 0.4);
-}
-
-.req-list li::after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  width: 6px;
-  height: 9px;
-  border-right: 2px solid var(--green);
-  border-bottom: 2px solid var(--green);
-  transform: rotate(45deg);
+  background: rgba(255, 122, 26, 0.15)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 L5 8.7 L9.4 3.5' fill='none' stroke='%23ff7a1a' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / 11px 11px no-repeat;
+  border: 1px solid rgba(255, 122, 26, 0.45);
 }
 
 .hiring-card {
@@ -949,7 +939,7 @@ p {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--green));
+  background: linear-gradient(90deg, var(--accent), #ffffff);
 }
 
 .hiring-card h3 {
