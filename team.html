@@ -35,12 +35,25 @@
   </div>
 </nav>
 
-<header class="hero" style="padding: 80px 0 64px;">
-  <div class="wrap">
+<header class="hero hero-sunrise hero-sub">
+  <div class="hero-sky" aria-hidden="true">
+    <div class="sun-glow"></div>
+    <svg class="sun-arcs" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#fff" stroke-width="1.4">
+        <path class="arc" d="M110 560 A390 390 0 0 1 890 560"/>
+        <path class="arc" d="M40 560 A460 460 0 0 1 960 560"/>
+        <path class="arc" d="M-40 560 A540 540 0 0 1 1040 560"/>
+        <path class="arc" d="M-130 560 A630 630 0 0 1 1130 560"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap hero-inner">
     <span class="eyebrow">The Team</span>
     <h1 style="font-size: clamp(2rem, 4vw, 3rem);">A small team, on purpose.</h1>
   </div>
 </header>
+
+<div class="horizon" aria-hidden="true"></div>
 
 <section>
   <div class="wrap">
@@ -49,6 +62,21 @@
 </section>
 
 <section class="cta">
+  <div class="cta-sky" aria-hidden="true">
+    <div class="cta-glow"></div>
+    <svg class="cta-arcs" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#ffb877">
+        <path d="M180 400 A320 320 0 0 1 820 400" stroke-opacity="0.1"/>
+        <path d="M90 400 A400 400 0 0 1 910 400" stroke-opacity="0.075"/>
+        <path d="M0 400 A490 490 0 0 1 1000 400" stroke-opacity="0.055"/>
+      </g>
+    </svg>
+    <svg class="cta-sun" viewBox="0 0 300 96" preserveAspectRatio="xMidYMax meet">
+      <defs><linearGradient id="ctaSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9552b"/><stop offset="1" stop-color="#e8814f"/></linearGradient></defs>
+      <path d="M78 88 A72 72 0 0 1 222 88 Z" fill="url(#ctaSun)"/>
+      <line x1="4" y1="88" x2="296" y2="88" stroke="#ffd089" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </div>
   <div class="wrap">
     <span class="eyebrow">Join Us</span>
     <h2>Want to help build this?</h2>
