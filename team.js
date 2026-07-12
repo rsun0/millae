@@ -16,7 +16,7 @@ const MILLAE_TEAM = [
   {
     name: "Junsoo Byun",
     role: "Founding Researcher",
-    blurb: "Working on the founding team with an interest in neuroscience.",
+    blurb: "Working on the founding team with experience in LLMs and an interest in neuroscience.",
     photo: "assets/junsoo-byun.jpg",
     profile: "junsoo.html",
   },
@@ -30,14 +30,14 @@ const MILLAE_TEAM = [
   {
     name: "Lynn Won",
     role: "Financial Consultant",
-    blurb: "Managing Millae's finances so we can go the furthest with what we have.",
+    blurb: "Managing our finances with her accounting background so we can go the furthest with what we have.",
     initials: "LW",
     profile: "lynn.html",
   },
   {
     name: "Jimin Han",
     role: "Designer",
-    blurb: "Shaping Millae's brand, product, and visual identity.",
+    blurb: "Designing Millae’s visual identity, brand assets, and user experience with a foundation in fine arts.",
     photo: "assets/jimin-han.jpg",
     profile: "jimin.html",
   },
@@ -45,7 +45,7 @@ const MILLAE_TEAM = [
     openRole: true,
     name: "Founding Researcher",
     role: "Open Role",
-    blurb: "We're looking for an experienced researcher to join as a cofounder.",
+    blurb: "We're looking for an experienced researcher to join our team in Seoul as a cofounder.",
     linkText: "See the role →",
   },
 ];

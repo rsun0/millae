@@ -7,16 +7,15 @@
 <meta name="description" content="Millae is a Seoul-based AI research team pursuing human-level general intelligence as a single, straight-shot goal.">
 
 <meta property="og:title" content="Millae">
-<meta property="og:description" content="A Seoul-based AI research team pursuing human-level general intelligence, and nothing else.">
+<meta property="og:description" content="A Seoul-based AI research team pursuing human-level general intelligence.">
 <meta property="og:image" content="assets/logo-512.png">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,8 +23,7 @@
 <nav class="nav">
   <div class="wrap">
     <a href="index.html" class="brand">
-      <img src="assets/logo-transparent-256.png" alt="Millae logo">
-      Millae
+      <img src="assets/logo-03.svg" alt="Millae" class="brand-logo">
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#mission">Mission</a>
@@ -38,12 +36,46 @@
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
     </div>
   </div>
+  <div class="day-progress" aria-hidden="true"><span class="day-progress-sun"></span></div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <img src="assets/logo-transparent-256.png" alt="Millae" class="hero-logo">
-    <h1>Human-level general intelligence.<br>Nothing else.</h1>
+<header class="hero hero-sunrise">
+  <!-- Sunrise sky: bright orange morning background, soft glow + elegant
+       concentric light arcs radiating from the horizon. Decorative. -->
+  <div class="hero-sky" aria-hidden="true">
+    <div class="sun-glow"></div>
+    <!-- Flowing diagonal lines, ifp.org-style: a field of fine curves sweeping
+         across the sky, thickest where they converge near the horizon. -->
+    <svg class="hero-flowlines" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#fff">
+        <path class="flow" d="M-100 40 C 220 140, 520 40, 1100 260" stroke-width="1" stroke-opacity="0.16"/>
+        <path class="flow" d="M-100 90 C 240 190, 540 90, 1100 300" stroke-width="1.1" stroke-opacity="0.14"/>
+        <path class="flow" d="M-100 150 C 260 230, 560 150, 1100 340" stroke-width="1.2" stroke-opacity="0.15"/>
+        <path class="flow" d="M-100 210 C 280 270, 580 210, 1100 380" stroke-width="1.3" stroke-opacity="0.13"/>
+        <path class="flow" d="M-100 270 C 300 310, 600 270, 1100 420" stroke-width="1.4" stroke-opacity="0.12"/>
+        <path class="flow" d="M-100 330 C 320 350, 620 330, 1100 460" stroke-width="1.5" stroke-opacity="0.11"/>
+        <path class="flow" d="M-100 390 C 340 390, 640 390, 1100 500" stroke-width="1.6" stroke-opacity="0.1"/>
+      </g>
+    </svg>
+    <svg class="sun-arcs" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#fff" stroke-width="1.4">
+        <path class="arc" d="M110 560 A390 390 0 0 1 890 560"/>
+        <path class="arc" d="M40 560 A460 460 0 0 1 960 560"/>
+        <path class="arc" d="M-40 560 A540 540 0 0 1 1040 560"/>
+        <path class="arc" d="M-130 560 A630 630 0 0 1 1130 560"/>
+        <path class="arc" d="M-230 560 A730 730 0 0 1 1230 560"/>
+        <path class="arc" d="M-340 560 A840 840 0 0 1 1340 560"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <!-- Hero logo: "millae" set inside the sun, with a slowly crawling turtle.
+         Inline SVG so the turtle can animate and the mark stays crisp. -->
+    <div class="hero-logo">
+      <img src="assets/logo-03-anim.svg" alt="Millae" class="hero-logo-img">
+    </div>
+    <h1>Pursuing human-level general intelligence.</h1>
     <p class="lede">Millae is an independent research team in Seoul, South Korea. We are working towards general intelligence.</p>
     <div class="hero-actions">
       <a href="#hiring" class="btn btn-primary">We're Hiring</a>
@@ -52,27 +84,32 @@
   </div>
 </header>
 
+<!-- Full-width horizon line: the stark seam where the orange sunrise breaks into black. -->
+<div class="horizon" aria-hidden="true"></div>
+
 <section id="mission">
+  <div class="sun-watermark" aria-hidden="true"></div>
   <div class="wrap mission-grid">
     <div>
+      <div class="eyebrow-rule"></div>
       <span class="eyebrow">Our Focus</span>
       <h2>Pure research.</h2>
-      <p class="lede">Most companies split their attention between research and product, or crowd into the same handful of trendy approaches. Some academic labs do the same. We do neither. Millae is a research effort focused purely on fundamental questions — deliberately working the under-invested, unfashionable corners of AI research, where we believe the highest-leverage progress is still waiting to be found.</p>
+      <p class="lede">Most companies and labs split their attention between research and product, or crowd into the same handful of trendy approaches. We do neither. Millae is a research effort focused purely on fundamental questions — deliberately working the underinvested, unfashionable corners of AI research, where we believe the highest-leverage progress is still waiting to be found.</p>
     </div>
     <div class="mission-points">
       <div class="point">
         <span class="num">01</span>
         <h3>Our background</h3>
-        <p>We build on what we learned from researching reinforcement learning and LLMs in the past. We also draw wisdom and inspiration from our past work experience (software engineering), non-profit leadership experience, therapy, as well as Buddhism, Taoism, etc.</p>
+        <p>We build on what we learned in the past from researching reinforcement learning and LLMs. We also draw wisdom and inspiration from our past work experience in software engineering, non-profit leadership experience, and therapy, as well as Buddhism and Taoism.</p>
       </div>
       <div class="point">
         <span class="num">02</span>
         <h3>Current interests</h3>
-        <p>We're currently selecting our next research topics. We're exploring:</p>
+        <p>We're currently selecting our next research topic. We're exploring:</p>
         <ul>
           <li>How can we make models more creative?</li>
           <li>How can we give models more long-term memory, like humans have? (using compression?)</li>
-          <li>How can we utilize insights from other domains, like psychology, neuroscience, anthropology, economics, etc?</li>
+          <li>How can we utilize insights from other domains, like psychology, neuroscience, anthropology, and economics?</li>
         </ul>
       </div>
     </div>
@@ -92,9 +129,12 @@
   </div>
 </section> -->
 
+<div class="hz-divider" aria-hidden="true"></div>
+
 <section id="philsophy">
   <div class="wrap mission-grid">
     <div>
+      <div class="eyebrow-rule"></div>
       <span class="eyebrow">How We Work</span>
       <h2>We don't rush.</h2>
       <p class="lede">Good research takes time, and we're not interested in a publication treadmill to prove otherwise. We work at the pace the problem actually requires, and we'd rather walk in the right direction than risk sprinting in the wrong direction.</p>
@@ -108,18 +148,21 @@
       <div class="point">
         <span class="num">02</span>
         <h3>Committed to the open-source community</h3>
-        <p>We believe the field goes further in the long run through open collaboration, rather than siloed proprietary efforts. We see ourselves as just one team contributing to the broader collective effort to reach general intelligence. If your lab is interested in collaborating with us, <a href="mailto:collaboration@millae.ai">please email us</a>.</p>
-        <p>"If you want to go fast, go alone. If you want to go far, go together."</p>
+        <p>We believe the field goes further in the long run through open collaboration, rather than siloed proprietary efforts. We see ourselves as just one team contributing to the broader collective effort to reach general intelligence. If your lab is interested in collaboration, <a href="mailto:collaboration@millae.ai">please email us</a>.</p>
+        <p class="pull-quote">"If you want to go fast, go alone. If you want to go far, go together."</p>
       </div>
     </div>
   </div>
 </section>
 
+<div class="hz-divider" aria-hidden="true"></div>
+
 <section id="team-preview">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="eyebrow">The Team</span>
+        <div class="eyebrow-rule"></div>
+        <span class="eyebrow">Our Team</span>
         <h2>Meet the people behind Millae.</h2>
       </div>
     </div>
@@ -127,21 +170,25 @@
   </div>
 </section>
 
+<div class="hz-divider" aria-hidden="true"></div>
+
 <section id="hiring" class="hiring">
+  <div class="sun-watermark" aria-hidden="true"></div>
   <div class="wrap hiring-grid">
     <div>
+      <div class="eyebrow-rule"></div>
       <span class="eyebrow">We're Hiring</span>
       <h2>Join as a founding researcher.</h2>
       <p class="lede">We're looking for:</p>
       <ul class="req-list">
-        <li>Professional research experience in any field relevant to AI (e.g. psychology, neuroscience, anthropology, etc.)</li>
-        <li>Desire for long research horizons and a slower pace than the field's default</li>
-        <li>Based in Seoul, South Korea</li>
+        <li><svg class="req-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.6 6.3 L5 8.7 L9.4 3.5"/></svg>Professional research experience in any field relevant to AI (e.g. psychology, neuroscience, anthropology, etc.)</li>
+        <li><svg class="req-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.6 6.3 L5 8.7 L9.4 3.5"/></svg>Desire for long research horizons and a slower pace than the field's default</li>
+        <li><svg class="req-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.6 6.3 L5 8.7 L9.4 3.5"/></svg>Based in Seoul, South Korea</li>
       </ul>
     </div>
     <div class="hiring-card">
       <span class="eyebrow">Founding Researcher</span>
-      <h3>Seoul, South Korea</h3>
+      <p class="hiring-location">Seoul, South Korea</p>
       <p>If this sounds like you, reach out directly. Tell us about your research and why you want to work with us.</p>
       <a class="btn btn-primary" href="mailto:applications@millae.ai">Email Us</a>
     </div>
@@ -149,7 +196,23 @@
 </section>
 
 <section class="cta">
+  <div class="cta-sky" aria-hidden="true">
+    <div class="cta-glow"></div>
+    <svg class="cta-arcs" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#ffb877">
+        <path d="M180 400 A320 320 0 0 1 820 400" stroke-opacity="0.1"/>
+        <path d="M90 400 A400 400 0 0 1 910 400" stroke-opacity="0.075"/>
+        <path d="M0 400 A490 490 0 0 1 1000 400" stroke-opacity="0.055"/>
+      </g>
+    </svg>
+    <svg class="cta-sun" viewBox="0 0 300 96" preserveAspectRatio="xMidYMax meet">
+      <defs><linearGradient id="ctaSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9552b"/><stop offset="1" stop-color="#e8814f"/></linearGradient></defs>
+      <path d="M78 88 A72 72 0 0 1 222 88 Z" fill="url(#ctaSun)"/>
+      <line x1="4" y1="88" x2="296" y2="88" stroke="#ffd089" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </div>
   <div class="wrap">
+    <div class="eyebrow-rule" style="margin-left:auto;margin-right:auto;"></div>
     <span class="eyebrow">Stay Connected</span>
     <h2>Follow our research as it happens.</h2>
     <p class="lede">We share updates on our research rarely — only when it matters.</p>
@@ -164,8 +227,8 @@
   <div class="wrap">
     <div class="footer-grid">
       <a href="index.html" class="footer-brand">
-        <img src="assets/logo-transparent-256.png" alt="Millae logo">
-        Millae — Seoul, South Korea
+        <img src="assets/logo-03.svg" alt="Millae" class="footer-logo">
+        <span>— Seoul, South Korea</span>
       </a>
     </div>
     <p class="footer-note">© 2026 Millae. All rights reserved.</p>

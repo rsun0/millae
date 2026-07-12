@@ -10,6 +10,58 @@ function encodeFormData(data) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Scroll reveal: fade content up as it enters the viewport.
+  // Skipped entirely when the user prefers reduced motion, or without IO support.
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    const selectors = [
+      ".mission-grid > div",
+      ".point",
+      "#team-preview .section-head",
+      ".team-card",
+      ".hiring-grid > div",
+      ".cta .wrap > *",
+    ];
+    const targets = [];
+    selectors.forEach((sel) =>
+      document.querySelectorAll(sel).forEach((el) => targets.push(el))
+    );
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    targets.forEach((el, i) => {
+      el.classList.add("reveal");
+      // gentle stagger within each group
+      el.style.transitionDelay = Math.min(i % 6, 5) * 60 + "ms";
+      io.observe(el);
+    });
+  }
+
+  // Condense the sticky nav once the page is scrolled past the top.
+  const nav = document.querySelector(".nav");
+  const dayProgress = document.querySelector(".day-progress");
+  if (nav || dayProgress) {
+    const onScrollUpdate = () => {
+      if (nav) nav.classList.toggle("scrolled", window.scrollY > 24);
+      if (dayProgress) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+        dayProgress.style.width = (pct * 100).toFixed(2) + "%";
+      }
+    };
+    onScrollUpdate();
+    window.addEventListener("scroll", onScrollUpdate, { passive: true });
+    window.addEventListener("resize", onScrollUpdate, { passive: true });
+  }
+
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
   if (navToggle && navLinks) {
