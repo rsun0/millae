@@ -969,7 +969,7 @@ p {
 /* Inline check, centered in the circle; draws in when the section reveals. */
 .req-check {
   position: absolute;
-  left: 3.5px;
+  left: 4.5px;                      /* +1px optical nudge: a check reads left of its geometric center */
   top: 50%;
   transform: translateY(-50%);
   width: 11px;
