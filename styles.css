@@ -1529,5 +1529,5 @@ footer {
 /* Warm the dark profile hero + give the avatar a sunrise ring */
 .profile-hero { position: relative; }
 .profile-avatar {
-  box-shadow: 0 0 0 3px rgba(255, 122, 26, 0.25), 0 8px 26px rgba(255, 105, 56, 0.18);
+  box-shadow: 0 0 0 2px rgb(255, 195, 155), 0 8px 26px rgba(255, 105, 56, 0.18);
 }
