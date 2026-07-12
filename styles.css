@@ -232,7 +232,7 @@ p {
   font-weight: 600;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.2s ease;
   white-space: nowrap;
 }
 
@@ -246,7 +246,7 @@ p {
 }
 
 .btn-primary:hover {
-  background: var(--accent-light);
+  box-shadow: 0 0 0 1.5px rgba(255, 122, 26, 0.55), 0 4px 24px 2px rgba(255, 122, 26, 0.5);
 }
 
 .btn-outline {
