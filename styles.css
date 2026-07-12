@@ -1437,7 +1437,7 @@ footer {
   filter: drop-shadow(0 -6px 30px rgba(200, 80, 30, 0.4));
 }
 
-/* Time-of-day dividers: a sun cresting the horizon, higher toward mid-page */
+/* Time-of-day dividers: a sun cresting the horizon, higher towards mid-page */
 .hz-divider.hz-sun { overflow: visible; }
 .hz-crest {
   position: absolute;
