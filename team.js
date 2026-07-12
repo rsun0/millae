@@ -37,7 +37,7 @@ const MILLAE_TEAM = [
   {
     name: "Jimin Han",
     role: "Designer",
-    blurb: "Shaping Millae's brand, product, and visual identity.",
+    blurb: "Shaping Millae's brand and visual identity.",
     photo: "assets/jimin-han.jpg",
     profile: "jimin.html",
   },
