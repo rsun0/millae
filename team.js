@@ -30,7 +30,7 @@ const MILLAE_TEAM = [
   {
     name: "Lynn Won",
     role: "Financial Consultant",
-    blurb: "Managing Millae's finances so we can go the furthest with what we have.",
+    blurb: "Managing Millae's finances with her accounting background so we can go the furthest with what we have.",
     initials: "LW",
     profile: "lynn.html",
   },
