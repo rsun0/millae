@@ -453,7 +453,9 @@ p {
 }
 
 .hero-sunrise .btn-primary:hover {
-  background: #2e1708;
+  background: #1a0d04;
+  border-color: var(--text);
+  box-shadow: 0 0 0 0.75px var(--text);
 }
 
 .hero-sunrise .btn-outline {
