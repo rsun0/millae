@@ -16,7 +16,7 @@ const MILLAE_TEAM = [
   {
     name: "Junsoo Byun",
     role: "Founding Researcher",
-    blurb: "Working on the founding team with an interest in neuroscience.",
+    blurb: "Working on the founding team with experience in LLMs and an interest in neuroscience.",
     photo: "assets/junsoo-byun.jpg",
     profile: "junsoo.html",
   },
