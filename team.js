@@ -30,14 +30,14 @@ const MILLAE_TEAM = [
   {
     name: "Lynn Won",
     role: "Financial Consultant",
-    blurb: "Managing Millae's finances with her accounting background so we can go the furthest with what we have.",
+    blurb: "Managing our finances with her accounting background so we can go the furthest with what we have.",
     initials: "LW",
     profile: "lynn.html",
   },
   {
     name: "Jimin Han",
     role: "Designer",
-    blurb: "Shaping Millae's brand and visual identity.",
+    blurb: "Designing Millae’s visual identity, brand assets, and user experience with a foundation in fine arts.",
     photo: "assets/jimin-han.jpg",
     profile: "jimin.html",
   },
