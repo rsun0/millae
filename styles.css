@@ -246,7 +246,7 @@ p {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 0 1.5px rgba(255, 122, 26, 0.55), 0 4px 24px 2px rgba(255, 122, 26, 0.5);
+  box-shadow: 0 0 0 1.5px rgba(255, 122, 26, 0.55), 0 3px 12px 0 rgba(255, 122, 26, 0.48);
 }
 
 .btn-outline {
@@ -1019,6 +1019,13 @@ p {
 
 .hiring-card h3 {
   font-size: 1.15rem;
+}
+
+.hiring-location {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .hiring-card .btn {
