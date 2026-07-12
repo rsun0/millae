@@ -20,7 +20,7 @@
 
       .cls-3, .cls-4 {
         stroke: #fff;
-        stroke-miterlimit: 10;
+        stroke-linejoin: round;
       }
 
       .cls-4 {
