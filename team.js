@@ -45,7 +45,7 @@ const MILLAE_TEAM = [
     openRole: true,
     name: "Founding Researcher",
     role: "Open Role",
-    blurb: "We're looking for an experienced researcher to join as a cofounder.",
+    blurb: "We're looking for an experienced researcher to join our team in Seoul as a cofounder.",
     linkText: "See the role →",
   },
 ];
